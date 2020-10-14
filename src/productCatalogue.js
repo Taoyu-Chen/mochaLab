@@ -16,6 +16,14 @@ class Catalogue {
     }
     return false;
   }
-
+  removeProductById(id) {
+    const removeProduct = this.findProductById(id);
+    if (removeProduct) {
+      this.products = this.products.filter(
+        (product) => product.id !== id
+      );
+    }
+    return removeProduct;
+  }
 }
 module.exports = Catalogue;
